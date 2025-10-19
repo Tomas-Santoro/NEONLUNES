@@ -74,6 +74,7 @@ namespace MoreMountains.TopDownEngine
 		protected bool _shouldMove = true;
 		protected Health _health;
 		protected bool _spawnerIsFacingRight;
+		protected bool volviendo;
 
 		/// <summary>
 		/// On awake, we store the initial speed of the object 
@@ -151,11 +152,18 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		public virtual void Movement()
 		{
-			_movement = Direction * (Speed / 10) * Time.deltaTime;
-			//transform.Translate(_movement,Space.World);
-			if (_rigidBody != null)
+			if (!volviendo)
 			{
-				_rigidBody.MovePosition (this.transform.position + _movement);
+                _movement = Direction * (Speed / 10) * Time.deltaTime;
+            }
+			else
+			{
+                _movement = -Direction * (Speed / 10) * Time.deltaTime;
+            }
+            //transform.Translate(_movement,Space.World);
+            if (_rigidBody != null)
+			{
+				_rigidBody.MovePosition(this.transform.position + _movement);
 			}
 			if (_rigidBody2D != null)
 			{
@@ -164,6 +172,15 @@ namespace MoreMountains.TopDownEngine
 			// We apply the acceleration to increase the speed
 			Speed += Acceleration * Time.deltaTime;
 		}
+
+		public void VoltearDireccion()
+		{
+			
+			//StartCoroutine(DisableColliderForParry());
+			volviendo = true;
+
+            _damageOnTouch.StopIgnoringObject(_weapon.Owner.gameObject);
+        }
 
 		/// <summary>
 		/// Sets the projectile's direction.
@@ -344,6 +361,8 @@ namespace MoreMountains.TopDownEngine
 			{
 				_health.OnDeath -= OnDeath;
 			}			
-		}
+			volviendo=false;
+            _damageOnTouch.IgnoreGameObject(_weapon.Owner.gameObject);
+        }
 	}	
 }

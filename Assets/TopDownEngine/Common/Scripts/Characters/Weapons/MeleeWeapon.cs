@@ -216,7 +216,8 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		public override void WeaponUse()
 		{
-			base.WeaponUse();
+            if (_attackInProgress) { return; }
+            base.WeaponUse();
 			StartCoroutine(MeleeWeaponAttack());
 		}
 
@@ -226,7 +227,7 @@ namespace MoreMountains.TopDownEngine
 		/// <returns>The weapon attack.</returns>
 		protected virtual IEnumerator MeleeWeaponAttack()
 		{
-			if (_attackInProgress) { yield break; }
+			//if (_attackInProgress) { yield break; }
 
 			_attackInProgress = true;
 			yield return new WaitForSeconds(InitialDelay);

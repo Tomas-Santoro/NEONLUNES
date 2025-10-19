@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba85f5b87cb8cf84f9e09dcca90cd372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AimControl: 0
+  AimControl: 3
   AimControlActive: 1
   RotationMode: 0
   WeaponRotationSpeed: 0
@@ -113,7 +113,7 @@ MonoBehaviour:
   RightHandHandle: {fileID: 0}
   ModifyMovementWhileAttacking: 0
   MovementMultiplier: 0
-  PreventAllMovementWhileInUse: 0
+  PreventAllMovementWhileInUse: 1
   PreventAllAimWhileInUse: 0
   RecoilForce: -500
   Animators:
@@ -146,8 +146,8 @@ MonoBehaviour:
   Flipped: 0
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
-  AreaOffset: {x: 0.5, y: 0, z: 0}
-  AreaSize: {x: 4, y: 2, z: 0}
+  AreaOffset: {x: 2, y: 0, z: 0}
+  AreaSize: {x: 6, y: 2, z: 0}
   TriggerFilter: 195
   HitDamageableFeedback: {fileID: 0}
   HitNonDamageableFeedback: {fileID: 0}

@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 2526674574810015453}
   - component: {fileID: 114594623923584052}
   m_Layer: 23
-  m_Name: KoalaNinjaSword 1
+  m_Name: PruebaParry
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   MovementMultiplier: 0
   PreventAllMovementWhileInUse: 0
   PreventAllAimWhileInUse: 0
-  RecoilForce: -3000
+  RecoilForce: 0
   Animators:
   - {fileID: 95683327680487172}
   PerformAnimatorSanityChecks: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
   MeleeDamageAreaMode: 0
   DamageAreaShape: 0
   AreaOffset: {x: 2, y: 0, z: 0}
-  AreaSize: {x: 10, y: 2, z: 0}
+  AreaSize: {x: 10, y: 10, z: 0}
   TriggerFilter: 195
   HitDamageableFeedback: {fileID: 0}
   HitNonDamageableFeedback: {fileID: 0}

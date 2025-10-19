@@ -10077,7 +10077,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 8389632
   Owner: {fileID: 0}
   TriggerFilter: 195
   MinDamageCaused: 10
@@ -10239,7 +10239,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   BounceFeedback: {fileID: 0}
-  AmountOfBounces: {x: 0, y: 1}
+  AmountOfBounces: {x: 1, y: 1}
   SpeedModifier: {x: 0.9, y: 0.9}
 --- !u!1 &1732689920048540
 GameObject:

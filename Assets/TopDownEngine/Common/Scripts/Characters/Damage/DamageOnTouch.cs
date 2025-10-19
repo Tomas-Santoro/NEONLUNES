@@ -303,6 +303,7 @@ namespace MoreMountains.TopDownEngine
 		protected virtual void OnDisable()
 		{
 			ClearIgnoreList();
+			TargetLayerMask &= ~(1 << LayerMask.NameToLayer("Enemies"));
 		}
 
 		/// <summary>
@@ -585,11 +586,18 @@ namespace MoreMountains.TopDownEngine
 			// cache reset 
 			_colliderTopDownController = null;
 			_colliderHealth = collider.gameObject.MMGetComponentNoAlloc<Health>();
-			
+         
 			// if what we're colliding with is damageable
-			if (_colliderHealth != null)
+            if (_colliderHealth != null)
 			{
-				if (_colliderHealth.CurrentHealth > 0)
+                if (collider.gameObject.GetComponent<Projectile>() != null)
+                {
+                    collider.gameObject.GetComponent<Projectile>().VoltearDireccion();
+                    collider.gameObject.GetComponent<DamageOnTouch>().TargetLayerMask |= (1 << LayerMask.NameToLayer("Enemies"));
+					return;
+                }
+
+                if (_colliderHealth.CurrentHealth > 0)
 				{
 					OnCollideWithDamageable(_colliderHealth);
 				}
@@ -600,17 +608,19 @@ namespace MoreMountains.TopDownEngine
 				HitNonDamageableEvent?.Invoke(collider);
 			}
 
-			OnAnyCollision(collider);
-			HitAnythingEvent?.Invoke(collider);
-			HitAnythingFeedback?.PlayFeedbacks(transform.position);
+			
+
+			//OnAnyCollision(collider);
+			//HitAnythingEvent?.Invoke(collider);
+			//HitAnythingFeedback?.PlayFeedbacks(transform.position);
 		}
 
-		/// <summary>
-		/// Checks whether or not damage should be applied this frame
-		/// </summary>
-		/// <param name="collider"></param>
-		/// <returns></returns>
-		protected virtual bool EvaluateAvailability(GameObject collider)
+        /// <summary>
+        /// Checks whether or not damage should be applied this frame
+        /// </summary>
+        /// <param name="collider"></param>
+        /// <returns></returns>
+        protected virtual bool EvaluateAvailability(GameObject collider)
 		{
 			// if we're inactive, we do nothing
 			if (!isActiveAndEnabled) { return false; }

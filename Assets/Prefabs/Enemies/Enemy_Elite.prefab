@@ -433,7 +433,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TargetLayerMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 0
   Owner: {fileID: 0}
   TriggerFilter: 195
   MinDamageCaused: 100
