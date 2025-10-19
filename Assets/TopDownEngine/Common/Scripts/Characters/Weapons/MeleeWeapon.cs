@@ -215,8 +215,7 @@ namespace MoreMountains.TopDownEngine
 		/// When the weapon is used, we trigger our attack routine
 		/// </summary>
 		public override void WeaponUse()
-		{
-            if (_attackInProgress) { return; }
+		{           
             base.WeaponUse();
 			StartCoroutine(MeleeWeaponAttack());
 		}
@@ -227,7 +226,7 @@ namespace MoreMountains.TopDownEngine
 		/// <returns>The weapon attack.</returns>
 		protected virtual IEnumerator MeleeWeaponAttack()
 		{
-			//if (_attackInProgress) { yield break; }
+			if (_attackInProgress) { yield break; }
 
 			_attackInProgress = true;
 			yield return new WaitForSeconds(InitialDelay);
