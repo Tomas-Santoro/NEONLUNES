@@ -362,7 +362,11 @@ namespace MoreMountains.TopDownEngine
 				_health.OnDeath -= OnDeath;
 			}			
 			volviendo=false;
-            _damageOnTouch.IgnoreGameObject(_weapon.Owner.gameObject);
+			if(_weapon.Owner.gameObject != null)
+			{
+                _damageOnTouch.IgnoreGameObject(_weapon.Owner.gameObject);
+            }
+            
         }
 	}	
 }
