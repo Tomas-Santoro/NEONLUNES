@@ -524,7 +524,8 @@ namespace MoreMountains.TopDownEngine
 			{
 				_delayBeforeUseCounter = DelayBeforeUse;
 				WeaponState.ChangeState(WeaponStates.WeaponDelayBeforeUse);
-			}
+                _ownerAnimator.SetTrigger("Use");
+            }
 			else
 			{
 				StartCoroutine(ShootRequestCo());
@@ -548,8 +549,8 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		public virtual void CaseWeaponUse()
 		{
-			WeaponUse();
-			_delayBetweenUsesCounter = TimeBetweenUses;
+			WeaponUse();           
+            _delayBetweenUsesCounter = TimeBetweenUses;
 			WeaponState.ChangeState(WeaponStates.WeaponDelayBetweenUses);
 		}
 
@@ -759,7 +760,8 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		public virtual void WeaponUse()
 		{
-			ApplyRecoil();
+            //_ownerAnimator.SetTrigger("Use");
+            ApplyRecoil();
 			TriggerWeaponUsedFeedback();
 		}
 
