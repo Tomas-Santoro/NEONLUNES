@@ -331,7 +331,7 @@ MonoBehaviour:
   BlockingWeaponStates: 
   InitialWeapon: {fileID: 114317679573123918, guid: 79ce4dbcfa6eb0644a8fad7ffc601fcd,
     type: 3}
-  CanPickupWeapons: 1
+  CanPickupWeapons: 0
   WeaponUseFeedback: {fileID: 0}
   WeaponAttachment: {fileID: 6835847880326579055}
   ProjectileSpawn: {fileID: 0}
