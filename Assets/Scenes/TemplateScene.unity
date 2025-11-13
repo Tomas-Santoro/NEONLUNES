@@ -11795,6 +11795,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1561694053617324, guid: d481643dd167d694fb449bc7a0273a88,
         type: 3}
+    - target: {fileID: 199971042720436102, guid: 131cb63cb93061a4c84bec4ea80fe00c,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12874,11 +12879,9 @@ MonoBehaviour:
   ParentInstantiatedToThisObject: 1
   DestroyPreviouslyInstantiatedObject: 1
   RandomPool:
-  - {fileID: 1561694053617324, guid: 5c26c405fb78e5147b287cca8ce20adf, type: 3}
-  - {fileID: 1561694053617324, guid: d481643dd167d694fb449bc7a0273a88, type: 3}
   - {fileID: 1561694053617324, guid: de5ea2e4551d06e4ca57e8d430280b7f, type: 3}
+  - {fileID: 1561694053617324, guid: d481643dd167d694fb449bc7a0273a88, type: 3}
   - {fileID: 1561694053617324, guid: 6ee30e9e43504e741b0800e1dd85fc7a, type: 3}
-  - {fileID: 1561694053617324, guid: c3a5cdc24a04bdd428c18293e62c138e, type: 3}
   InstantiateButton: 0
 --- !u!1 &2019438063
 GameObject:

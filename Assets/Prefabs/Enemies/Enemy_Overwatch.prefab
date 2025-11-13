@@ -329,7 +329,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  InitialWeapon: {fileID: 114317679573123918, guid: 79ce4dbcfa6eb0644a8fad7ffc601fcd,
+  InitialWeapon: {fileID: 114068047272519342, guid: 778f897d77d01e14da0178de7ab24709,
     type: 3}
   CanPickupWeapons: 1
   WeaponUseFeedback: {fileID: 0}
@@ -339,7 +339,7 @@ MonoBehaviour:
   AmmoDisplayID: 0
   AutoIK: 1
   ContinuousPress: 0
-  GettingHitInterruptsAttack: 0
+  GettingHitInterruptsAttack: 1
   UseSecondaryAxisThresholdToShoot: 0
   ForceWeaponAimControl: 0
   ForcedWeaponAimControl: 1
@@ -483,7 +483,7 @@ MonoBehaviour:
   Model: {fileID: 0}
   CurrentHealth: 0
   Invulnerable: 0
-  InitialHealth: 30
+  InitialHealth: 100
   MaximumHealth: 30
   ResetHealthOnEnable: 1
   ImmuneToDamage: 0
@@ -625,7 +625,7 @@ MonoBehaviour:
   InitializationMode: 0
   Label: 
   UseMinimumXDistance: 1
-  MinimumXDistance: 0.1
+  MinimumXDistance: 1
 --- !u!114 &114975266224184248
 MonoBehaviour:
   m_ObjectHideFlags: 0
