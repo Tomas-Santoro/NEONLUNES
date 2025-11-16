@@ -135,10 +135,11 @@ namespace MoreMountains.TopDownEngine
                     objectHealth.Revive();
                 }
 
-                Vector2 randomOffset = UnityEngine.Random.insideUnitCircle * spawnRadius;
-                Vector3 spawnPosition = transform.position + new Vector3(randomOffset.x, randomOffset.y, 0f);
+                //Vector2 randomOffset = UnityEngine.Random.insideUnitCircle * spawnRadius;
+                //Vector3 spawnPosition = transform.position + new Vector3(randomOffset.x, randomOffset.y, 0f);
 
-                nextGameObject.transform.position = spawnPosition;
+                //nextGameObject.transform.position = spawnPosition;
+                nextGameObject.transform.position = this.transform.position;
             }
 
             _lastSpawnTimestamp = Time.time;
@@ -180,7 +181,7 @@ namespace MoreMountains.TopDownEngine
 		{
 			MinFrequency = MinFrequency / 1.3f;
 			MaxFrequency = MaxFrequency / 1.3f;
-			spawnBatchSize++;
+			//spawnBatchSize++;
 		}
 
     }
