@@ -625,7 +625,7 @@ MonoBehaviour:
   InitializationMode: 0
   Label: 
   UseMinimumXDistance: 1
-  MinimumXDistance: 1
+  MinimumXDistance: 2
 --- !u!114 &114975266224184248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,9 +648,9 @@ MonoBehaviour:
   ObstacleMask:
     serializedVersion: 2
     m_Bits: 256
-  ObstaclesDetectionMode: 1
+  ObstaclesDetectionMode: 0
   CanTargetSelf: 0
-  TargetCheckFrequency: 1
+  TargetCheckFrequency: 0.1
   OverlapMaximum: 10
 --- !u!114 &114822406682578840
 MonoBehaviour:
