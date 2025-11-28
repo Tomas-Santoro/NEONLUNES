@@ -35,11 +35,13 @@ namespace MoreMountains.TopDownEngine
 		protected float _nextFrequency = 0f;
 
 		protected float _elapsedTime = 0f;
-		protected float _timeFlag1 = 30f;
+		protected float _timeFlag1 = 3f;
 		protected bool _timeFlag1Enabled = false;
-		protected float _timeFlag2 = 60f;
-        protected bool _timeFlag2Enabled = false;
-        [SerializeField] private float spawnRadius = 3f;
+		protected float _timeFlag2 = 30f;
+		protected bool _timeFlag2Enabled = false;
+		protected float _timeFlag3 = 60f;
+        protected bool _timeFlag3Enabled = false;
+        //[SerializeField] private float spawnRadius = 3f;
         [SerializeField] private int spawnBatchSize = 1;
 
 
@@ -77,7 +79,7 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void Update()
 		{	
-			if (!_timeFlag2Enabled) 
+			if (!_timeFlag3Enabled) 
 					_elapsedTime += Time.deltaTime;
 
             // NEW: timed enabling of pools
@@ -85,19 +87,27 @@ namespace MoreMountains.TopDownEngine
             {
                 if (ObjectPooler is MMMultipleObjectPooler multiPooler)
                 {
-                    multiPooler.EnableObjects("Enemy_Soldier", true);
+                    multiPooler.EnableObjects("Enemy_Grunt", true);
 					_timeFlag1Enabled=true;
+                }
+            }
+            if (_elapsedTime > _timeFlag2 && !_timeFlag2Enabled)
+            {
+                if (ObjectPooler is MMMultipleObjectPooler multiPooler)
+                {
+                    multiPooler.EnableObjects("Enemy_Soldier", true);
+					_timeFlag2Enabled=true;
 					LowerFrecuency();
                 }
             }
 
 
-            if (_elapsedTime > _timeFlag2 && !_timeFlag2Enabled)
+            if (_elapsedTime > _timeFlag3 && !_timeFlag3Enabled)
             {
                 if (ObjectPooler is MMMultipleObjectPooler multiPooler)
                 {
                     multiPooler.EnableObjects("Enemy_Overwatch", true);
-					_timeFlag2Enabled=true;
+					_timeFlag3Enabled=true;
 					LowerFrecuency();
                 }
             }
