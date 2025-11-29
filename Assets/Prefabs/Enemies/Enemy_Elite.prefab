@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 47421343
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -258896467, guid: c53a97642f889f944a02d125ad2171dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -243,7 +243,7 @@ SortingGroup:
   m_GameObject: {fileID: 1561694053617324}
   m_Enabled: 1
   m_SortingLayerID: 47421343
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_SortAtRoot: 0
 --- !u!114 &114002022934925870
@@ -329,9 +329,9 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  InitialWeapon: {fileID: 114317679573123918, guid: d44af13c60b194a49a7d3291e4d0a457,
+  InitialWeapon: {fileID: 114068047272519342, guid: 0f5f0575aab1e6040b65348328c36ad7,
     type: 3}
-  CanPickupWeapons: 0
+  CanPickupWeapons: 1
   WeaponUseFeedback: {fileID: 0}
   WeaponAttachment: {fileID: 6835847880326579055}
   ProjectileSpawn: {fileID: 0}
@@ -339,7 +339,7 @@ MonoBehaviour:
   AmmoDisplayID: 0
   AutoIK: 1
   ContinuousPress: 0
-  GettingHitInterruptsAttack: 0
+  GettingHitInterruptsAttack: 1
   UseSecondaryAxisThresholdToShoot: 0
   ForceWeaponAimControl: 0
   ForcedWeaponAimControl: 1
@@ -625,7 +625,7 @@ MonoBehaviour:
   InitializationMode: 0
   Label: 
   UseMinimumXDistance: 1
-  MinimumXDistance: 0.1
+  MinimumXDistance: 2
 --- !u!114 &114975266224184248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,9 +648,9 @@ MonoBehaviour:
   ObstacleMask:
     serializedVersion: 2
     m_Bits: 256
-  ObstaclesDetectionMode: 1
+  ObstaclesDetectionMode: 0
   CanTargetSelf: 0
-  TargetCheckFrequency: 1
+  TargetCheckFrequency: 0.1
   OverlapMaximum: 10
 --- !u!114 &114822406682578840
 MonoBehaviour:
@@ -5644,7 +5644,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 47421343
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0

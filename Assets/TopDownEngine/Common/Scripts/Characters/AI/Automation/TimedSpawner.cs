@@ -34,10 +34,19 @@ namespace MoreMountains.TopDownEngine
 		protected float _lastSpawnTimestamp = 0f;
 		protected float _nextFrequency = 0f;
 
-		/// <summary>
-		/// On Start we initialize our spawner
-		/// </summary>
-		protected virtual void Start()
+		protected float _elapsedTime = 0f;
+		protected float _timeFlag1 = 30f;
+		protected bool _timeFlag1Enabled = false;
+		protected float _timeFlag2 = 60f;
+        protected bool _timeFlag2Enabled = false;
+        [SerializeField] private float spawnRadius = 3f;
+        [SerializeField] private int spawnBatchSize = 1;
+
+
+        /// <summary>
+        /// On Start we initialize our spawner
+        /// </summary>
+        protected virtual void Start()
 		{
 			Initialization ();
 		}
@@ -67,11 +76,38 @@ namespace MoreMountains.TopDownEngine
 		/// Every frame we check whether or not we should spawn something
 		/// </summary>
 		protected virtual void Update()
-		{
-			if ((Time.time - _lastSpawnTimestamp > _nextFrequency)  && CanSpawn)
+		{	
+			if (!_timeFlag2Enabled) 
+					_elapsedTime += Time.deltaTime;
+
+            // NEW: timed enabling of pools
+            if (_elapsedTime > _timeFlag1 && !_timeFlag1Enabled)
+            {
+                if (ObjectPooler is MMMultipleObjectPooler multiPooler)
+                {
+                    multiPooler.EnableObjects("Enemy_Soldier", true);
+					_timeFlag1Enabled=true;
+					LowerFrecuency();
+                }
+            }
+
+
+            if (_elapsedTime > _timeFlag2 && !_timeFlag2Enabled)
+            {
+                if (ObjectPooler is MMMultipleObjectPooler multiPooler)
+                {
+                    multiPooler.EnableObjects("Enemy_Overwatch", true);
+					_timeFlag2Enabled=true;
+					LowerFrecuency();
+                }
+            }
+
+            if ((Time.time - _lastSpawnTimestamp > _nextFrequency)  && CanSpawn)
 			{
 				Spawn ();
 			}
+
+
 		}
 
 		/// <summary>
@@ -80,38 +116,40 @@ namespace MoreMountains.TopDownEngine
 		/// </summary>
 		protected virtual void Spawn()
 		{
-			GameObject nextGameObject = ObjectPooler.GetPooledGameObject();
+            for (int i = 0; i < spawnBatchSize; i++)
+            {
+                GameObject nextGameObject = ObjectPooler.GetPooledGameObject();
 
-			// mandatory checks
-			if (nextGameObject==null) { return; }
-			if (nextGameObject.GetComponent<MMPoolableObject>()==null)
-			{
-				throw new Exception(gameObject.name+" is trying to spawn objects that don't have a PoolableObject component.");		
-			}	
+                if (nextGameObject == null) { continue; }
+                if (nextGameObject.GetComponent<MMPoolableObject>() == null)
+                {
+                    throw new Exception(gameObject.name + " is trying to spawn objects that don't have a PoolableObject component.");
+                }
 
-			// we activate the object
-			nextGameObject.gameObject.SetActive(true);
-			nextGameObject.gameObject.MMGetComponentNoAlloc<MMPoolableObject>().TriggerOnSpawnComplete();
+                nextGameObject.gameObject.SetActive(true);
+                nextGameObject.gameObject.MMGetComponentNoAlloc<MMPoolableObject>().TriggerOnSpawnComplete();
 
-			// we check if our object has an Health component, and if yes, we revive our character
-			Health objectHealth = nextGameObject.gameObject.MMGetComponentNoAlloc<Health> ();
-			if (objectHealth != null) 
-			{
-				objectHealth.Revive ();
-			}
+                Health objectHealth = nextGameObject.gameObject.MMGetComponentNoAlloc<Health>();
+                if (objectHealth != null)
+                {
+                    objectHealth.Revive();
+                }
 
-			// we position the object
-			nextGameObject.transform.position = this.transform.position;
+                //Vector2 randomOffset = UnityEngine.Random.insideUnitCircle * spawnRadius;
+                //Vector3 spawnPosition = transform.position + new Vector3(randomOffset.x, randomOffset.y, 0f);
 
-			// we reset our timer and determine the next frequency
-			_lastSpawnTimestamp = Time.time;
-			DetermineNextFrequency ();
-		}
+                //nextGameObject.transform.position = spawnPosition;
+                nextGameObject.transform.position = this.transform.position;
+            }
 
-		/// <summary>
-		/// Determines the next frequency by randomizing a value between the two specified in the inspector.
-		/// </summary>
-		protected virtual void DetermineNextFrequency()
+            _lastSpawnTimestamp = Time.time;
+            DetermineNextFrequency();
+        }
+
+        /// <summary>
+        /// Determines the next frequency by randomizing a value between the two specified in the inspector.
+        /// </summary>
+        protected virtual void DetermineNextFrequency()
 		{
 			_nextFrequency = UnityEngine.Random.Range (MinFrequency, MaxFrequency);
 		}
@@ -139,5 +177,12 @@ namespace MoreMountains.TopDownEngine
 		{
 			CanSpawn = true;
 		}
-	}
+		public virtual void LowerFrecuency()
+		{
+			MinFrequency = MinFrequency / 1.3f;
+			MaxFrequency = MaxFrequency / 1.3f;
+			//spawnBatchSize++;
+		}
+
+    }
 }

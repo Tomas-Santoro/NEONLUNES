@@ -214,6 +214,7 @@ namespace MoreMountains.TopDownEngine
 			_startTime = Time.time;
 			_lastPosition = transform.position;
 			_lastDamagePosition = transform.position;
+			this.gameObject.GetComponent<DamageOnTouch>().MinDamageCaused = 10f;
 		}
 
 		/// <summary>
@@ -594,6 +595,7 @@ namespace MoreMountains.TopDownEngine
                 {
                     collider.gameObject.GetComponent<Projectile>().VoltearDireccion();
                     collider.gameObject.GetComponent<DamageOnTouch>().TargetLayerMask |= (1 << LayerMask.NameToLayer("Enemies"));
+					collider.gameObject.GetComponent<DamageOnTouch>().MinDamageCaused = 100f;
 					return;
                 }
 

@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4736116768674126
 Transform:
   m_ObjectHideFlags: 0
@@ -331,7 +331,7 @@ MonoBehaviour:
   BlockingWeaponStates: 
   InitialWeapon: {fileID: 114317679573123918, guid: 79ce4dbcfa6eb0644a8fad7ffc601fcd,
     type: 3}
-  CanPickupWeapons: 0
+  CanPickupWeapons: 1
   WeaponUseFeedback: {fileID: 0}
   WeaponAttachment: {fileID: 6835847880326579055}
   ProjectileSpawn: {fileID: 0}
@@ -339,7 +339,7 @@ MonoBehaviour:
   AmmoDisplayID: 0
   AutoIK: 1
   ContinuousPress: 0
-  GettingHitInterruptsAttack: 0
+  GettingHitInterruptsAttack: 1
   UseSecondaryAxisThresholdToShoot: 0
   ForceWeaponAimControl: 0
   ForcedWeaponAimControl: 1
@@ -625,7 +625,7 @@ MonoBehaviour:
   InitializationMode: 0
   Label: 
   UseMinimumXDistance: 1
-  MinimumXDistance: 0.1
+  MinimumXDistance: 2
 --- !u!114 &114975266224184248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,9 +648,9 @@ MonoBehaviour:
   ObstacleMask:
     serializedVersion: 2
     m_Bits: 256
-  ObstaclesDetectionMode: 1
+  ObstaclesDetectionMode: 0
   CanTargetSelf: 0
-  TargetCheckFrequency: 1
+  TargetCheckFrequency: 0.1
   OverlapMaximum: 10
 --- !u!114 &114822406682578840
 MonoBehaviour:

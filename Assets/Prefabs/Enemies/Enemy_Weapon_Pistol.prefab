@@ -5163,7 +5163,7 @@ MonoBehaviour:
   WeaponReloadNeededMMFeedback: {fileID: 0}
   WeaponReloadImpossibleMMFeedback: {fileID: 0}
   InitializeOnStart: 1
-  Interruptable: 0
+  Interruptable: 1
   Flipped: 0
   ProjectileSpawnOffset: {x: 1.85, y: 0.07, z: 0}
   DefaultProjectileDirection: {x: 0, y: 0, z: 1}
