@@ -321,7 +321,7 @@ MonoBehaviour:
       type: 3}
     PoolSize: 10
     PoolCanExpand: 1
-    Enabled: 0
+    Enabled: 1
   - GameObjectToPool: {fileID: 1561694053617324, guid: 6ee30e9e43504e741b0800e1dd85fc7a,
       type: 3}
     PoolSize: 3

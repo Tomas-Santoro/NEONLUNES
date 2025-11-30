@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 47421343
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -258896467, guid: c53a97642f889f944a02d125ad2171dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -243,7 +243,7 @@ SortingGroup:
   m_GameObject: {fileID: 1561694053617324}
   m_Enabled: 1
   m_SortingLayerID: 47421343
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_SortAtRoot: 0
 --- !u!114 &114002022934925870
@@ -329,7 +329,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  InitialWeapon: {fileID: 114068047272519342, guid: 778f897d77d01e14da0178de7ab24709,
+  InitialWeapon: {fileID: 114068047272519342, guid: 0f5f0575aab1e6040b65348328c36ad7,
     type: 3}
   CanPickupWeapons: 1
   WeaponUseFeedback: {fileID: 0}
@@ -697,11 +697,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9bf1ac07f3659498e89157301c9746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LootMode: 0
+  LootMode: 1
   GameObjectToLoot: {fileID: 5279826695300404299, guid: 1c275a059be16654cb7b0171e78dd809,
     type: 3}
   LootTable:
-    ObjectsToLoot: []
+    ObjectsToLoot:
+    - Loot: {fileID: 5279826695300404299, guid: 1c275a059be16654cb7b0171e78dd809,
+        type: 3}
+      Weight: 5
+      ChancePercentage: 0
+    - Loot: {fileID: 9140274731206863875, guid: 0adba868bfc74684e99c2f41a5f10ff6,
+        type: 3}
+      Weight: 1
+      ChancePercentage: 0
     WeightsTotal: 0
   LootTableSO: {fileID: 0}
   SpawnLootOnDeath: 1
@@ -5644,7 +5652,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 47421343
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
