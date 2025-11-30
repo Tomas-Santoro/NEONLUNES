@@ -697,11 +697,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d9bf1ac07f3659498e89157301c9746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LootMode: 0
+  LootMode: 1
   GameObjectToLoot: {fileID: 5279826695300404299, guid: 1c275a059be16654cb7b0171e78dd809,
     type: 3}
   LootTable:
-    ObjectsToLoot: []
+    ObjectsToLoot:
+    - Loot: {fileID: 5279826695300404299, guid: 1c275a059be16654cb7b0171e78dd809,
+        type: 3}
+      Weight: 5
+      ChancePercentage: 0
+    - Loot: {fileID: 9140274731206863875, guid: 0adba868bfc74684e99c2f41a5f10ff6,
+        type: 3}
+      Weight: 1
+      ChancePercentage: 0
     WeightsTotal: 0
   LootTableSO: {fileID: 0}
   SpawnLootOnDeath: 1

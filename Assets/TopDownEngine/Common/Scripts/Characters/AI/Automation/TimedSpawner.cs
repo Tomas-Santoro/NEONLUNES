@@ -87,7 +87,7 @@ namespace MoreMountains.TopDownEngine
                 {
                     multiPooler.EnableObjects("Enemy_Soldier", true);
 					_timeFlag1Enabled=true;
-					LowerFrecuency();
+					//LowerFrecuency();
                 }
             }
 
@@ -97,8 +97,9 @@ namespace MoreMountains.TopDownEngine
                 if (ObjectPooler is MMMultipleObjectPooler multiPooler)
                 {
                     multiPooler.EnableObjects("Enemy_Overwatch", true);
+                    multiPooler.EnableObjects("Enemy_Elite", true);
 					_timeFlag2Enabled=true;
-					LowerFrecuency();
+					//LowerFrecuency();
                 }
             }
 

@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 47421343
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -608002222, guid: cb129d119cd851b40adab0ffe50b1f03, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -243,7 +243,7 @@ SortingGroup:
   m_GameObject: {fileID: 1561694053617324}
   m_Enabled: 1
   m_SortingLayerID: 47421343
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_SortAtRoot: 0
 --- !u!114 &114002022934925870
@@ -329,7 +329,7 @@ MonoBehaviour:
   BlockingMovementStates: 
   BlockingConditionStates: 
   BlockingWeaponStates: 
-  InitialWeapon: {fileID: 114317679573123918, guid: 79ce4dbcfa6eb0644a8fad7ffc601fcd,
+  InitialWeapon: {fileID: 114594623923584052, guid: 59d3a8f8d9e74ae439f39c86133e85e4,
     type: 3}
   CanPickupWeapons: 1
   WeaponUseFeedback: {fileID: 0}
@@ -374,7 +374,7 @@ MonoBehaviour:
   InputAuthorized: 1
   AnalogInput: 0
   ScriptDrivenInput: 0
-  WalkSpeed: 6
+  WalkSpeed: 9
   ShouldSetMovement: 1
   IdleThreshold: 0.05
   Acceleration: 0
@@ -436,8 +436,8 @@ MonoBehaviour:
     m_Bits: 1024
   Owner: {fileID: 0}
   TriggerFilter: 195
-  MinDamageCaused: 100
-  MaxDamageCaused: 100
+  MinDamageCaused: 50
+  MaxDamageCaused: 50
   TypedDamages: []
   DamageDirectionMode: 1
   DamageCausedKnockbackType: 1
@@ -624,8 +624,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InitializationMode: 0
   Label: 
-  UseMinimumXDistance: 1
-  MinimumXDistance: 2
+  UseMinimumXDistance: 0
+  MinimumXDistance: 0
 --- !u!114 &114975266224184248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,7 +639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Label: 
-  Radius: 20
+  Radius: 999999
   DetectionOriginOffset: {x: 0, y: 0, z: 0}
   TargetLayer:
     serializedVersion: 2
@@ -5644,7 +5644,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 47421343
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0

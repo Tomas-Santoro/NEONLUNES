@@ -15618,7 +15618,7 @@ MonoBehaviour:
     - rid: 0
       type: {class: MMF_Particles, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
-        Active: 1
+        Active: 0
         UniqueID: 1615611432
         Label: Particles
         ChannelMode: 0
